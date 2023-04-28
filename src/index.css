@@ -1,0 +1,161 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 22px;
+}
+body {
+  min-height: 100vh;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 500px;
+  border: 1px solid rgb(17, 17, 149);
+  margin: auto;
+}
+header {
+  width: 100%;
+  padding: 0 0.25em;
+  background-color: rgb(17, 17, 149);
+  color: bisque;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+footer {
+  width: 200px;
+  padding: 0.25em;
+  background-color: mediumblue;
+  color: aliceblue;
+  display: grid;
+  place-content: center;
+}
+button {
+  margin-left: 15px;
+  background-color: #ff0204;
+  border-radius: 5px;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0 0.25rem 0.25rem;
+}
+
+ul li::before {
+  content: "\2008";
+}
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin-bottom: 10px;
+  background-color: rgb(187, 185, 185);
+}
+/* .item:first-child {
+  margin: 0;
+} */
+
+.item input[type="checkbox"] {
+  text-align: center;
+  width: 2.5rem;
+  width: 48px;
+  min-width: 48px;
+  height: 2.5rem;
+  height: 48px;
+  min-height: 48px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.item input [type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
+.item > label {
+  font-size: 0.75rem;
+  flex-grow: 1;
+}
+
+.item svg {
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font-size: 1rem;
+  color: rgb(72, 115, 159);
+  cursor: pointer;
+}
+
+.item svg:focus,
+.item svg:hover {
+  color: rgb(196, 52, 52);
+  outline: none;
+}
+.item svg:active {
+  color: red;
+  outline: none;
+  height: 43px;
+}
+
+.addForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0, 0.5rem;
+  border-top: 5px solid white;
+  border-bottom: 3px solid white;
+}
+.addForm label {
+  position: absolute;
+  left: -999999px;
+}
+
+.addForm input[type="text"] {
+  flex-grow: 1;
+  max-width: calc(100% - 40px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+  margin-left: 10px;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(255, 255, 255));
+  color: white;
+}
+
+button {
+  height: 45px;
+  width: 40px;
+  background-color: rgb(175, 234, 234);
+  color: rgb(235, 58, 58);
+  border-radius: 10px;
+  padding: 0.2rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 2px;
+}
+button:focus,
+button:hover {
+  color: wheat;
+  background-color: rgb(19, 188, 188);
+  outline: none;
+}
