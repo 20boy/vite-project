@@ -30,10 +30,10 @@ function App() {
     localStorage.setItem("shoppinglist", JSON.stringify(newInput));
   };
   const addItems = (item) => {
-    // const id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
-    // const myNewItem = { id, checked: false, item };
-    // const listItem = [...items, myNewItem];
-    // setAndSave(listItem);
+    const id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item };
+    const listItem = [...items, myNewItem];
+    setAndSave(listItem);
     console.log(item);
   };
 
