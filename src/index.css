@@ -110,6 +110,7 @@ ul li::before {
   color: rgb(196, 52, 52);
   outline: none;
 }
+
 .item svg:active {
   color: red;
   outline: none;
@@ -155,7 +156,28 @@ button {
 }
 button:focus,
 button:hover {
-  color: wheat;
-  background-color: rgb(19, 188, 188);
+  color: rgb(106, 101, 197);
+  background-color: rgb(79, 220, 69);
   outline: none;
+}
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid white;
+}
+
+.searchForm input[type="text"] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+  margin-top: 7px;
+  background: linear-gradient(to right, rgb(106, 210, 156), rgb(118, 236, 22));
+  color: white;
 }

@@ -2,29 +2,17 @@ import AddItems from "./AddItems";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
+import SearchItem from "./SearchItem";
 import "./App.css";
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
 function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "One bag of cocoa crunchies",
-    },
-    {
-      id: 2,
-      checked: true,
-      item: "One spoon of milk bricks",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Two buckets of fruit juice",
-    },
-  ]);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("shoppinglist"))
+  );
   const [newItems, setNewItem] = useState("");
+  const [search, setSearch] = useState("");
   const setAndSave = (newInput) => {
     setItems(newInput);
     localStorage.setItem("shoppinglist", JSON.stringify(newInput));
@@ -34,7 +22,6 @@ function App() {
     const myNewItem = { id, checked: false, item };
     const listItem = [...items, myNewItem];
     setAndSave(listItem);
-    console.log(item);
   };
 
   const handleCheck = (id) => {
@@ -51,7 +38,7 @@ function App() {
     e.preventDefault();
     if (!newItems) return;
     addItems(newItems);
-    setItems(" ");
+    setNewItem("");
     console.log(`Done`);
   };
 
@@ -63,8 +50,11 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
+      <SearchItem search={search} setSearch={setSearch} />
       <Content
-        items={items}
+        items={items.filter((item) =>
+          item.item.toLowerCase().includes(search.toLowerCase())
+        )}
         setItems={setItems}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
