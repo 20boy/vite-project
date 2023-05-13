@@ -4,12 +4,12 @@ import Content from "./Content";
 import Footer from "./Footer";
 import SearchItem from "./SearchItem";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
 function App() {
   const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem("shoppinglist"))
+    JSON.parse(localStorage.getItem("shoppinglist")) || []
   );
   const [newItems, setNewItem] = useState("");
   const [search, setSearch] = useState("");
