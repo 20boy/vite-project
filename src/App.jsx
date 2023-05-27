@@ -13,26 +13,26 @@ function App() {
   );
   const [newItems, setNewItem] = useState("");
   const [search, setSearch] = useState("");
-  const setAndSave = (newInput) => {
-    setItems(newInput);
-    localStorage.setItem("shoppinglist", JSON.stringify(newInput));
-  };
   const addItems = (item) => {
     const id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id, checked: false, item };
     const listItem = [...items, myNewItem];
-    setAndSave(listItem);
+    setItems(listItem);
   };
+
+  useEffect(() => {
+    localStorage.setItem("shoppinglist", JSON.stringify(items));
+  }, [items]);
 
   const handleCheck = (id) => {
     const listItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
-    setAndSave(listItems);
+    setItems(listItems);
   };
   const handleDelete = (id) => {
     const listItem = items.filter((item) => item.id !== id);
-    setAndSave(listItem);
+    setItems(listItem);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
