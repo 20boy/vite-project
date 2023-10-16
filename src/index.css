@@ -26,8 +26,9 @@ header {
   background-color: rgb(17, 17, 149);
   color: bisque;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
+  font-size: 0.9rem;
 }
 
 main {
@@ -38,6 +39,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  padding: 2px;
 }
 
 footer {
@@ -47,11 +49,6 @@ footer {
   color: aliceblue;
   display: grid;
   place-content: center;
-}
-button {
-  margin-left: 15px;
-  background-color: #ff0204;
-  border-radius: 5px;
 }
 
 ul {
@@ -121,9 +118,9 @@ ul li::before {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  padding: 0, 0.5rem;
-  border-top: 5px solid white;
-  border-bottom: 3px solid white;
+  padding: 0 0.5rem 0.25rem;
+  /* border-top: 5px solid white;
+  border-bottom: 3px solid white; */
 }
 .addForm label {
   position: absolute;
@@ -132,7 +129,7 @@ ul li::before {
 
 .addForm input[type="text"] {
   flex-grow: 1;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 50px);
   min-height: 48px;
   font-size: 1rem;
   padding: 0.25rem;
@@ -152,7 +149,9 @@ button {
   padding: 0.2rem;
   font-size: 1rem;
   margin-left: 0.5rem;
-  margin-right: 2px;
+
+  cursor: pointer;
+  outline: none;
 }
 button:focus,
 button:hover {
@@ -178,6 +177,6 @@ button:hover {
   border-radius: 0.25rem;
   outline: none;
   margin-top: 7px;
-  background: linear-gradient(to right, rgb(106, 210, 156), rgb(118, 236, 22));
+  background: linear-gradient(to right, rgb(45, 54, 49), rgb(118, 236, 22));
   color: white;
 }
