@@ -1,7 +1,7 @@
 import ItemList from "./ItemList";
 const Content = ({ items, handleCheck, handleDelete, FaTrashAlt }) => {
   return (
-    <main>
+    <>
       {items.length ? (
         <ItemList
           items={items}
@@ -12,7 +12,7 @@ const Content = ({ items, handleCheck, handleDelete, FaTrashAlt }) => {
       ) : (
         <p style={{ marginTop: "2rem" }}>NO MORE TODOS </p>
       )}
-    </main>
+    </>
   );
 };
 
