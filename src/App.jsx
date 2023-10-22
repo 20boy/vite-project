@@ -27,7 +27,6 @@ function App() {
         const response = await fetch(API_URL);
         if (!response.ok) throw Error("DID NOT RECIEVE YOUR TODOS");
         const listItem = await response.json();
-        console.log(listItem);
         setItems(listItem);
         setFetchError(null);
       } catch (err) {
